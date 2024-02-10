@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Create Lesson</title>
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+    }
+
+    .lesson-container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Create Lesson</h1>
+    <form id="lessonForm" action="/addLesson" method="post">
+      <label for="courseId">Course ID:</label>
+      <input type="text" id="courseId" name="courseId" required>
+      <label for="lessonId">Lesson ID:</label>
+      <input type="text" id="lessonId" name="lessonId" required>
+      <label for="lessonName">Lesson Name:</label>
+      <input type="text" id="lessonName" name="lessonName" required>
+      <label for="lessonTopics">Lesson Topics:</label>
+      <textarea id="lessonTopics" name="lessonTopics" required></textarea>
+      <label for="videoLink">Video Link:</label>
+      <input type="text" id="videoLink" name="videoLink" required>
+      <input type="submit" value="Add Lesson">
+    </form>
+  </div>
+</body>
+</html>

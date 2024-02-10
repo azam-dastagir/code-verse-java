@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Course List</title>
+<style>
+table {
+	border-collapse: collapse;
+	width: 100%;
+	font-family: Arial, sans-serif;
+}
+
+th, td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+	color: #333;
+}
+
+tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+	<h1>Lesson List</h1>
+	<table>
+		<tr>
+			<th>Lesson ID</th>
+			<th>Lesson Name</th>
+			<th>Lesson Link</th>
+		</tr>
+		<#list lessons as lesson>
+		<tr>
+			<td>${lesson.lessonId}</td>
+			<td>${lesson.lessonName}</td>
+
+			<td>
+				<form action="/viewLessonDetails" method="post">
+					<input type="hidden" name="lessonId" value="${lesson.lessonId}">
+					<button type="submit">View Lesson</button>
+				</form>
+			</td>
+
+		</tr>
+		</#list>
+	</table>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Course List</title>
+<style>
+table {
+	border-collapse: collapse;
+	width: 100%;
+	font-family: Arial, sans-serif;
+}
+
+th, td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+	color: #333;
+}
+
+tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+.link-container {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.link-container a {
+	padding: 10px;
+	text-decoration: none;
+	background-color: #0088cc;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.link-container a:hover {
+	background-color: #006699;
+}
+
+.buy-button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.buy-button a {
+	padding: 10px;
+	text-decoration: none;
+	background-color: #00cc00;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.buy-button a:hover {
+	background-color: #009900;
+}
+</style>
+</head>
+<body>
+	<div class="buy-button">
+	<form action="/buyCourse" method="post">
+	<input type="hidden" name="courseId" value="${course.courseId}">
+	<button type="submit">Buy This Course</button>
+	 </form>
+	</div>
+	<h1>${course.courseName}</h1>
+	<h2>Lesson List</h2>
+	<table>
+		<tr>
+			<th>Lesson ID</th>
+			<th>Lesson Name</th>
+		</tr>
+		<#list lessons as lesson>
+		<tr>
+			<td>${lesson.lessonId}</td>
+			<td>${lesson.lessonName}</td>
+		</tr>
+		</#list>
+	</table>
+
+	<div class="link-container">
+		<a href="/exploreCourses">Go Back</a>
+		<a href="/studentHome">Go to Homepage</a>
+	</div>
+</body>
+</html>

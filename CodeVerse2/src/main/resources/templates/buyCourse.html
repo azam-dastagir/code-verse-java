@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Buy Course</title>
+</head>
+<body>
+	<h3>PayMent page</h3>
+	<div>
+		<h4>${course.courseId}</h4>
+		<h4>${course.courseName}</h4>
+		<h4>${course.coursePrice}</h4>
+	</div>
+	<div class="buy-button">
+	<form action="/paymentSuccess" method="post">
+	<input type="hidden" value="${course.courseId}">
+		<button type="submit">Pay</button>
+	</form>
+	</div>
+</body>
+</html>
